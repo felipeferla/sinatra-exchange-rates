@@ -1,0 +1,12 @@
+
+<h1>Currency Pairs</h1>
+  <%=@data.fetch("currencies")%> 
+<ul>
+
+<% @keys.each do |a_key|%>
+
+<li>  <a href = "/"> Convert 1 <%=a_key%> to... </li>
+
+<%end%>
+
+</ul>
