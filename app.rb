@@ -11,8 +11,17 @@ get("/") do
   @currencies = @data.fetch("currencies")
   @keys = @currencies.keys
 
+  erb(:homepage)
+end
 
+get("/:from_currency") do
+  @data_raw = HTTP.get(api_url)
+  @data = JSON.parse(@data_raw)
+  @currencies = @data.fetch("currencies")
+  @keys = @currencies.keys
+  
+  @original_currency = params.fetch("from_currency")
 
-erb(:homepage)
+erb(:convert)
 
 end
