@@ -6,7 +6,8 @@ go <a href ="/"> back </a>
 
   <% @keys.each do |a_key|%>
 
-    <li>  <a href = "/<%=a_key%>"> Convert 1 <%=@original_currency%> to <%=a_key%> to... </li>
+    <li>  <a href = "/<%=@original_currency%>/<%=a_key%>"> Convert 1 <%=@original_currency%> to <%=a_key%> to... </a> </li>
 
-    <%end%>
-  </ul>
+  <%end%>
+
+</ul>
