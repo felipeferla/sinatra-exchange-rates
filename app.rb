@@ -43,5 +43,6 @@ get("/:from_currency/:to_currency") do
   @quote = @parsed_data.fetch("info").fetch("quote")
 
 
+
   erb(:results)
 end
