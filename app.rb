@@ -37,8 +37,8 @@ get("/:from_currency/:to_currency") do
   @keys = @currencies.keys
   @original_currency = params.fetch("from_currency")
   @destination_currency = params.fetch("to_currency")
-  api_url = "https://api.exchangerate.host/convert?access_key=#{ENV["EXCHANGE_RATE_KEY"]}&from=#{@original_currency}&to=#{@destination_currency}&amount=1"
-  @raw_data = HTTP.get(api_url)
+  destination_url = "https://api.exchangerate.host/convert?access_key=#{ENV["EXCHANGE_RATE_KEY"]}&from=#{@original_currency}&to=#{@destination_currency}&amount=1"
+  @raw_data = HTTP.get(destination_url)
   @parsed_data = JSON.parse(@raw_data)
   @quote = @parsed_data.fetch("info").fetch("quote")
 
